@@ -1,5 +1,5 @@
 <template>
-    <b-card bg-variant="primary" text-variant="light" class="pagetop">
+    <b-card bg-variant="purple" text-variant="light" class="pagetop">
         <h1 class="toptext">Project Management</h1>
     </b-card>
     <div class="wrapper">

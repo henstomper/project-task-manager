@@ -1,5 +1,5 @@
 <template>
-  <b-card bg-variant="primary" text-variant="light" class="pagetop">
+  <b-card bg-variant="purple" text-variant="light" class="pagetop">
         <h1 class="toptext">Project Management</h1>
   </b-card>
   <div class="wrapper">
@@ -13,7 +13,7 @@
       <b-tbody>
         <b-tr v-for="u in users">
           <b-td>{{ u.name }}</b-td>
-          <b-td><b-button pill variant="primary"><router-link :to="u.url">View</router-link></b-button></b-td>
+          <b-td><b-button pill variant="success"><router-link :to="u.url">View</router-link></b-button></b-td>
         </b-tr>
       </b-tbody>
     </b-table-simple>

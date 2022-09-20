@@ -46,6 +46,11 @@ a {
   text-decoration: inherit !important;
 }
 
+.bg-purple {
+  background-color: rgb(102, 14, 124) !important;
+  color: white !important
+}
+
 table {
   border:2px solid black;
   border-collapse: collapse;

@@ -1,10 +1,10 @@
 <template>
-    <b-card bg-variant="primary" text-variant="light" class="pagetop">
+    <b-card bg-variant="purple" text-variant="light" class="pagetop">
         <h1 class="toptext">Project Management</h1>
     </b-card>
     <div class="wrapper">
         <h2> {{ name }}'s Project List</h2>
-      <b-table-simple>
+      <b-table-simple hover>
         <b-thead>
             <b-tr>
                 <b-th class="header" variant="secondary">Project</b-th>
@@ -18,7 +18,7 @@
                 <b-td>{{ p.name }}</b-td>
                 <b-td><span v-for="m in p.members">{{ m }}, </span></b-td>
                 <b-td>{{ p.total }} Hours</b-td>
-                <b-td><b-button pill variant="primary"><router-link :to="p.url">View</router-link></b-button></b-td>
+                <b-td><b-button pill variant="success"><router-link :to="p.url">View</router-link></b-button></b-td>
             </b-tr>
         </b-tbody>
       </b-table-simple>

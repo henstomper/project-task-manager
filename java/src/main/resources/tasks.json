@@ -42,24 +42,24 @@
         "time": 3
     },
     {
-        "name": "Upgrade Angular",
+        "name": "Upgrade Javascript",
         "id": 14,
         "userId": 7, //Lan
-        "projectId": 3, //Angular Upgrades
+        "projectId": 3, //Javascript Upgrades
         "time": 15
     },
     {
         "name": "Fix Broken Things",
         "id": 15,
         "userId": 4, //Stuart
-        "projectId": 3, //Angular Upgrades
+        "projectId": 3, //Javascript Upgrades
         "time": 10
     },
     {
         "name": "Test",
         "id": 16,
         "userId": 7, //Lan
-        "projectId": 3, //Angular Upgrades
+        "projectId": 3, //Javascript Upgrades
         "time": 10
     }
 ]

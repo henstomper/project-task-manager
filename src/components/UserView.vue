@@ -1,23 +1,34 @@
 <template>
+    <b-card bg-variant="primary" text-variant="light" class="pagetop">
+        <h1 class="toptext">Project Management</h1>
+    </b-card>
     <div class="wrapper">
-        <router-link to="/">Home</router-link>
-        <h1> {{ name }}'s Project List</h1>
-      <table>
-        <tr>
-            <th>Project</th>
-            <th>Members</th>
-            <th>Estimated Hours</th>
-            <th>Actions</th>
-        </tr>
-        <tr v-for="p in projects">
-            <td>{{ p.name }}</td>
-            <td><span v-for="m in p.members">{{ m }}, </span></td>
-            <td>{{ p.total }} Hours</td>
-            <td><router-link :to="p.url">View</router-link></td>
-        </tr>
-      </table>
-      <button @click="$router.go(-1)">Back</button>
+        <h2> {{ name }}'s Project List</h2>
+      <b-table-simple>
+        <b-thead>
+            <b-tr>
+                <b-th class="header" variant="secondary">Project</b-th>
+                <b-th class="header" variant="secondary">Members</b-th>
+                <b-th class="header" variant="secondary">Estimated Hours</b-th>
+                <b-th class="header" variant="secondary">Actions</b-th>
+            </b-tr>
+        </b-thead>
+        <b-tbody>
+            <b-tr v-for="p in projects">
+                <b-td>{{ p.name }}</b-td>
+                <b-td><span v-for="m in p.members">{{ m }}, </span></b-td>
+                <b-td>{{ p.total }} Hours</b-td>
+                <b-td><b-button pill variant="primary"><router-link :to="p.url">View</router-link></b-button></b-td>
+            </b-tr>
+        </b-tbody>
+      </b-table-simple>
+        <div style="width: 100%">
+            
+        </div>
+        <b-button class="home"><router-link to="/">Home</router-link></b-button>
+        <b-button class="home" variant="secondary" @click="$router.go(-1)">Back</b-button>
     </div>
+    
   </template>
   
   <script lang="ts">
@@ -27,13 +38,12 @@
     import { useRoute } from 'vue-router'
   
     export default {
-        setup() {
-            const projects = reactive
-            const name = ref("")
-            return {
-                name
-            }
-        },
+        data() {
+          return {
+              projects: [],
+              name: ""
+          }
+      },
         //Once component has been mounted, make an HTTP request to fetch name and projects for specified user
         mounted() {
             const id = this.$route.params.id as BigInteger
